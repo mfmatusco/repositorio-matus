@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title># Métricas vs. Realidad: Billboard HOT100</title>
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+
+        <style>
+        body {
+            margin: 0; padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1d1d1b;
+            overflow: hidden;
+            font-family: "Poppins", sans-serif;
+        }   
+
+        .background-vector {
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200vw; height: 200vh;
+            z-index: -1;
+            opacity: 0.9;
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            text-decoration: none;
+            z-index: 10;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .content-normal {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
+
+        .logo-container {
+            width: auto; max-width: 200px;
+            flex-shrink: 0;
+            display: flex;
+        }
+
+        .logo-img {
+            width: 100%; height: auto;
+            display: block;
+        }
+
+        .text-content {
+            display: flex; flex-direction: column; justify-content: center;
+            color: #ff3389;
+        }
+
+        .main-title {
+            font-family: "Bowlby One", cursive; font-size: 40px;
+            line-height: 0.9; text-transform: uppercase;
+            margin: 0; white-space: nowrap;
+        }
+
+        .subtitle {
+            font-family: "Bowlby one", cursive; font-size: 58px;
+            margin: 0; margin-top: 8px;
+            opacity: 0.9; white-space: nowrap;
+        } 
+
+        .container:hover .content-normal {
+            opacity: 0.5;
+        }
+
+
+
+        container.activo .content-normal { opacity: 0; }
+        .container.activo .img-full-hover { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+   
+        @media (max-width: 600px) {
+            .content-normal { flex-direction: column; text-align: center; gap: 15px; }
+            .main-title { font-size: 32px; white-space: normal; }
+            .logo-container, .logo-img { width: 100px !important; max-width: 100px !important; }
+            .img-full-hover { width: 280px; }
+        }
+   
+      </style>
+</head>
+<body>
+    <div class="intro" id="intro">
+     <img src="img/fondo-vector.svg" class="background-vector" alt="Fondo Vectorial">
+
+     <a href="webstory.html" class="container" id="webstory Hot 100">
+        
+        <div class="content-normal">
+            <div class="logo-container">
+                <img src="img/logo.svg" class="logo-img" alt="Logo">
+            </div>
+
+            <div class="text-content">
+                <h1 class="main-title">Métricas vs. Realidad:</h1>
+                <p class="subtitle">Billboard HOT100</p>
+            </div>
+        </div>
+     </a>
+    </div>
+
+    <script>
+        const contenedor = document.getElementById('webstory Hot 100');
+        contenedor.addEventListener('mouseenter', function() { contenedor.classList.add('activo'); });
+        contenedor.addEventListener('mouseleave', function() { contenedor.classList.remove('activo'); });
+    </script>
+
+</body>
+</html>
